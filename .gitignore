@@ -33,3 +33,6 @@ secrets.sh
 /priv/static/js/app.js
 app.js.map
 /elm/web
+
+postgres/
+/elm-stuff

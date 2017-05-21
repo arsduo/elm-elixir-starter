@@ -5,6 +5,7 @@ defmodule Elmelixirstarter.User do
     field :name, :string
     field :image_url, :string
     field :username, :string
+    field :twitter_user_id, :integer
     field :provider_secret, :string
     field :provider_token, :string
 

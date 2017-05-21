@@ -17,6 +17,15 @@ config :elmelixirstarter, Elmelixirstarter.Endpoint,
   pubsub: [name: Elmelixirstarter.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+# Configure your database
+config :elmelixirstarter, Elmelixirstarter.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("PG_USER"),
+  password: System.get_env("PG_PASS"),
+  database: System.get_env("PG_DB"),
+  hostname: System.get_env("PG_HOST"),
+  pool_size: 10
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -25,6 +34,13 @@ config :logger, :console,
 # Auth
 config :ueberauth, Ueberauth,
   providers: [ twitter: { Ueberauth.Strategy.Twitter, [] } ]
+
+# Make sure to set your Twitter callback URL on your OAuth app!
+# For development, it should be http://localhost:4000/auth/twitter/callback
+config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
+  consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
+  consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
+
 
 config :guardian, Guardian,
   allowed_algos: ["HS512"], # optional
@@ -36,10 +52,6 @@ config :guardian, Guardian,
   # replace this before production, obviously 💻
   secret_key: "another secret key you need",
   serializer: Elmelixirstarter.GuardianSerializer
-
-# Import Twitter config
-
-import_config("twitter.exs")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
