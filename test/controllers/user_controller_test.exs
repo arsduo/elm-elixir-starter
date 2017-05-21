@@ -8,7 +8,7 @@ defmodule Elmelixirstarter.UserControllerTest do
     assert json_response(conn, 401) == Elmelixirstarter.AuthErrorHandler.unauthenticated_response
   end
 
-  test "#me renders the user" do
+  test "#me renders the user", %{conn: conn} do
     user = insert(:user)
     conn = guardian_login(user)
 
