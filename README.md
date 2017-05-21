@@ -20,6 +20,7 @@ and for his pairing on an earlier Elm+Elixir project.
 Once you've customized the code (see the next section), run:
 
 * `mix deps.get` to get the Phoenix dependencies
+* `yarn install` to get Javascript dependencies
 * `docker-compose build`
 * `docker-compose run web mix ecto.create`
 * `docker-compose run web mix ecto.migrate`
