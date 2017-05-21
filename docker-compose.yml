@@ -1,0 +1,33 @@
+version: '2.0'
+
+services:
+  web:
+    container_name: web
+    build: .
+    ports:
+     - 4000:4000
+    external_links:
+     - db
+    depends_on:
+     - db
+    environment:
+     - MIX_ENV=dev
+     - PG_HOST=db
+     - PG_USER=postgres
+     - PG_PASS=postgres
+     - PG_DB=elmelixirstarter_dev
+     - TWITTER_CONSUMER_KEY=YOUR_TWITTER_CONSUMER_KEY
+     - TWITTER_CONSUMER_SECRET=YOUR_TWITTER_CONSUMER_SECRET
+    volumes:
+     - .:/usr/src/app
+    # allow attaching directly to the container, for debugging
+    # see http://stackoverflow.com/questions/35211638/how-to-debug-a-rails-app-in-docker-with-pry
+    tty: true
+    stdin_open: true
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql
