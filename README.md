@@ -6,8 +6,8 @@ there on how to put those projects together, but as I've built more I've realize
 fully working, ready-to-go starter project would save a ton of time.
 
 In this repo, you'll find **an Elixir Phoenix web app** that uses **Elm as its frontend**, comes
-with **Twitter OAuth support** (easily extensible to Facebook, etc.), and is **Dockerized** for
-easy deployment.
+with **Twitter OAuth support** (easily extensible to Facebook, etc.), uses **yarn** for Javascript
+package management, and is **Dockerized** for easy deployment.
 
 I have at least two projects I'm excited to launch with this, and I hope this'll be useful to
 you as well. (If it is, let me know! Feedback, pull requests, issues very welcome.)
