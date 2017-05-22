@@ -29,7 +29,7 @@ defmodule Elmelixirstarter.AuthController do
 
   defp lookup_user(%{uid: twitter_uid}) do
     {uid, _} = Integer.parse(twitter_uid)
-    (from u in User, where: u.twitter_user_id == ^uid) |> Repo.one
+    Repo.one(from u in User, where: u.twitter_user_id == ^uid)
   end
 
   defp save_user_data(user, %{uid: twitter_uid, credentials: %{token: token, secret: secret}, info: %{name: name, nickname: screenname, image: image_url}}) do

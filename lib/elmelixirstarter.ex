@@ -1,4 +1,8 @@
 defmodule Elmelixirstarter do
+  @moduledoc """
+  Your application.
+  """
+
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
