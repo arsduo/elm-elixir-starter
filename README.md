@@ -5,15 +5,19 @@ made building new projects both at home and at work a lot of fun. There are good
 there on how to put those projects together, but as I've built more I've realized that a
 fully working, ready-to-go starter project would save a ton of time.
 
-In this repo, you'll find **an Elixir Phoenix web app** that uses **Elm as its frontend**, comes
-with **Twitter OAuth support** (easily extensible to Facebook, etc.), uses **yarn** for Javascript
-package management, and is **Dockerized** for easy deployment.
-
 I have at least two projects I'm excited to launch with this, and I hope this'll be useful to
 you as well. (If it is, let me know! Feedback, pull requests, issues very welcome.)
 
-Thanks to [Richard Whaling](https://github.com/rwhaling) for his invaluable help setting up Docker
-and for his pairing on an earlier Elm+Elixir project.
+## Features
+
+* [Elixir 1.4.4](http://elixir-lang.org) for the backend, with [Phoenix 1.2.1](phoenixframework.org) configured for Postgres
+* [Elm 0.18](http://elm-lang.org/) for the frontend
+* Auth through Twitter (extendible to other OAuth providers through [Guardian](https://github.com/ueberauth/guardian)]/[Ueberauth](https://github.com/ueberauth/ueberauth))
+* [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
+* Dockerized for easy development and deployment
+* [Credo](https://github.com/rrrene/credo) for Elixir linting
+* Unit and integration tests
+* Configured for Circle CI for easy testing and linting
 
 ## Starting things up
 
@@ -62,7 +66,14 @@ There are a few things that would make this more useful:
 Overall, I'm not an expert on Docker setup, so there may well be better ways to accomplish some of
 what I've done -- if you see some, let me know!
 
-## Phoenix (backend)
+## Thanks
+
+Thanks to [Richard Whaling](https://github.com/rwhaling) for his invaluable help setting up Docker
+and for his pairing on an earlier Elm+Elixir project.
+
+## References
+
+### Phoenix (backend)
 
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
@@ -71,18 +82,12 @@ what I've done -- if you see some, let me know!
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
 
-## Elm (frontend)
+### Elm (frontend)
 
-### Formatting
-
-Elm has strong community guidelines for formatting code and a utility that can [automatically
+[Elm](http://elm-lang.org/) has strong community guidelines for formatting code and a utility that can [automatically
 format](https://github.com/avh4/elm-format) for you. Make sure to install appropriate editor
 packages/formatters:
 
 * vim: [elm-vim](https://github.com/ElmCast/elm-vim)
 * Atom (not personally tested): [language](https://atom.io/packages/language-elm),
   [formatter](https://atom.io/packages/elm-format)
-
-### Learn more
-
-  * Official website: http://elm-lang.org/
