@@ -1,4 +1,8 @@
 defmodule Elmelixirstarter.AuthErrorHandler do
+  @moduledoc """
+  Your controllers can invoke this handler to render an unauthenticated response.
+  """
+
   use Elmelixirstarter.Web, :controller
 
   def unauthenticated(conn, _params) do
