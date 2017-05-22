@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/arsduo/commonplace-feeds
+    docker:
+      - image: trenpixster/elixir:1.4.1
+        environment:
+          PG_USER: ubuntu
+          PD_DB: circle_test
+          PG_PASS: ""
+      - image: postgres:9.6.2
+        environment:
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: circle_test
+          POSTGRES_PASSWORD: ""
+    steps:
+    - checkout
+    - run: mix deps.get
+    - run: mix test
