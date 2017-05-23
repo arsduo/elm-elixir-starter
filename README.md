@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/arsduo/elm-elixir-starter.svg?style=svg)](https://circleci.com/gh/arsduo/elm-elixir-starter)
+
 # Elm+Elixir+OAuth Starter
 
 Elm and Elixir have quickly become two of my favorite progamming languages, and together they've
@@ -16,7 +18,7 @@ you as well. (If it is, let me know! Feedback, pull requests, issues very welcom
 * [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
 * Dockerized for easy development and deployment
 * [Credo](https://github.com/rrrene/credo) for Elixir linting
-* Unit and integration tests
+* Thorough Elixir tests
 * Configured for Circle CI for easy testing and linting
 
 ## Starting things up
@@ -54,22 +56,26 @@ To set up a new project, you'll want to set up a few things:
 * Set a Phoenix secret key in `config/config.exs`
 * Set a Guardian secret key (for auth) in `config/config.exs`
 
-
 ## Known issues / to do
 
 There are a few things that would make this more useful:
 
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
+* Circle CI runs on a different base image than Docker (for ease of setup).
 * It doesn't start up with any cute images or instructions.
 
-Overall, I'm not an expert on Docker setup, so there may well be better ways to accomplish some of
-what I've done -- if you see some, let me know!
+Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
+accomplish some of what I've done -- if you see some, let me know! As mentioned above, feedback,
+issues, and pull requests are very welcome.
 
 ## Thanks
 
 Thanks to [Richard Whaling](https://github.com/rwhaling) for his invaluable help setting up Docker
-and for his pairing on an earlier Elm+Elixir project.
+and for his pairing on an earlier Elm+Elixir project, to [Gursimran
+Singh](https://github.com/gnarmis) for his work at [eSpark Learning](http://esparklearning.com) on
+Elixir and Docker, and, of course, the amazing people who've built all the technologies in this
+repo.
 
 ## References
 
