@@ -7,9 +7,6 @@ made building new projects both at home and at work a lot of fun. There are good
 there on how to put those projects together, but as I've built more I've realized that a
 fully working, ready-to-go starter project would save a ton of time.
 
-I have at least two projects I'm excited to launch with this, and I hope this'll be useful to
-you as well. (If it is, let me know! Feedback, pull requests, issues very welcome.)
-
 ## Features
 
 * [Elixir 1.4.4](http://elixir-lang.org) for the backend, with [Phoenix 1.2.1](phoenixframework.org) configured for Postgres
