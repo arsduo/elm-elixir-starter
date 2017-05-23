@@ -59,12 +59,12 @@ There are a few things that would make this more useful:
 
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
-* Circle CI runs on a different base image than Docker (for ease of setup).
+* Circle CI runs on a different, easier-to-set-up base image than Docker
 * It doesn't start up with any cute images or instructions.
 
 Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
-accomplish some of what I've done -- if you see some, let me know! As mentioned above, feedback,
-issues, and pull requests are very welcome.
+accomplish some of what I've done -- if you see some, let me know! Feedback, issues, and pull
+requests are very welcome.
 
 ## Thanks
 
