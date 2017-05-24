@@ -14,12 +14,6 @@ import Html exposing (Html)
 import Views.Home as Home
 
 
--- Utilities!
-
-import Debug exposing (log)
-import Update.Extra exposing (andThen)
-
-
 main : Program Never Model Msg
 main =
     Html.program { init = ( Model.init, UserApi.validateUser ), view = view, update = update, subscriptions = subscriptions }
