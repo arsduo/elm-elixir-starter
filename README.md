@@ -26,11 +26,17 @@ Once you've customized the code (see the next section), run:
 * `yarn install` to get Javascript dependencies
 * `docker-compose build`
 * `docker-compose run web mix ecto.create`
+
+Commands you'll find useful on an ongoing basis:
+
 * `docker-compose run web mix ecto.migrate`
 * `docker-compose up`
 
-Once it's up and running, `docker-compose run web mix ecto.migrate` and `docker-compose up` should
-be all you need on an ongoing basis.
+And a few for code quality:
+
+* Elixir tests: `mix test`
+* Elixir linting: `mix credo`
+* Elm linting: `yarn lint`
 
 When the server is running, check out [`localhost:4000`](http://localhost:4000) -- it comes with a
 login link that'll auth you with Twitter!
@@ -47,8 +53,10 @@ To set up a new project, you'll want to set up a few things:
 * `mv lib/elmelixirstarter.ex lib/${YOUR_PROJECT_NAME}.ex`
 * Change the project name in web/templates/layout/app.html.eex
 * Change the database name in `docker-compose.yml`
+* Update the project details in `elm/elm-package.json`
 
 ### Set up credentials
+
 * Set Twitter credentials appropriately in config/twitter.exs
 * Set a Phoenix secret key in `config/config.exs`
 * Set a Guardian secret key (for auth) in `config/config.exs`
@@ -60,6 +68,8 @@ There are a few things that would make this more useful:
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
 * Circle CI runs on a different, easier-to-set-up base image than Docker
+* `scripts/lint-elm.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
+  elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
 * It doesn't start up with any cute images or instructions.
 
 Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
