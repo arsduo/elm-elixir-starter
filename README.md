@@ -54,7 +54,7 @@ To set up a new project, you'll want to set up a few things:
 * Change the project name in web/templates/layout/app.html.eex
 * Change the database name in `docker-compose.yml`
 * Update the project details in `elm/elm-package.json`
-* Update `scripts/lint-elm.sh`, changing `arsduo` to the username you put in `elm-package.json`
+* Update `scripts/elm-lint.sh`, changing `arsduo` to the username you put in `elm-package.json`
 
 ### Set up credentials
 
@@ -68,7 +68,7 @@ There are a few things that would make this more useful:
 
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
-* `scripts/lint-elm.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
+* `scripts/elm-lint.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
   elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
 * It doesn't start up with any cute images or instructions.
 

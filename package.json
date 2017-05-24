@@ -4,7 +4,7 @@
   "scripts": {
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin",
-    "lint": "./scripts/lint-elm.sh"
+    "lint": "bash ./scripts/elm-lint.sh"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
