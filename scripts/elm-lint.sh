@@ -6,7 +6,7 @@ rm -rf elm-stuff/build-artifacts/0.18.0/arsduo
 # First, does it compile successfully?
 elm-make Main.elm --yes --output /tmp/elm-linting.html --warn &> /tmp/elm-linting-output
 if [[ $? -ne 0 ]]; then
-  echo "Failed to compile Elm!\n\n"
+  echo "Failed to compile Elm!"
   cat /tmp/elm-linting-output
   exit 1
 fi
@@ -14,11 +14,11 @@ fi
 # Second, were there any linter warnings?
 grep WARNINGS /tmp/elm-linting-output > /dev/null
 if [[ $? -eq 0 ]]; then
-  echo "\nElm linting failed!\n\n"
+  echo "\nElm linting failed!"
   cat /tmp/elm-linting-output
   exit 1
 fi
 
-echo "Compiling and linting succeeded!\n\n"
+echo "Compiling and linting succeeded!"
 cat /tmp/elm-linting-output
 exit 0
