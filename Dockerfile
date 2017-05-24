@@ -37,6 +37,9 @@ RUN mix deps.get
 ADD . .
 RUN mix compile
 
+# Install all Elm dependencies
+RUN cd elm && elm-package install --yes
+
 # Exposes this port from the docker container to the host machine
 EXPOSE 4000
 

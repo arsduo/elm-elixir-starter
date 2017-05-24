@@ -70,6 +70,7 @@ There are a few things that would make this more useful:
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
 * `scripts/elm-lint.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
   elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
+* Circle CI compiles all the Elixir files for both testing and linting
 * It doesn't start up with any cute images or instructions.
 
 Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
