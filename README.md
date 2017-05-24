@@ -68,8 +68,6 @@ There are a few things that would make this more useful:
 
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
-* Circle CI doesn't yet run Elm linting
-* Circle CI runs on a different, easier-to-set-up base image than Docker
 * `scripts/lint-elm.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
   elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
 * It doesn't start up with any cute images or instructions.
