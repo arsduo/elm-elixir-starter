@@ -13,10 +13,10 @@ fully working, ready-to-go starter project would save a ton of time.
 * [Elm 0.18](http://elm-lang.org/) for the frontend
 * Auth through Twitter (extendible to other OAuth providers through [Guardian](https://github.com/ueberauth/guardian)]/[Ueberauth](https://github.com/ueberauth/ueberauth))
 * [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
-* Dockerized for easy development and deployment
-* [Credo](https://github.com/rrrene/credo) for Elixir linting
-* Thorough Elixir tests
-* Configured for Circle CI for easy testing and linting
+* Elixir tests and linting via [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) and [Credo](https://github.com/rrrene/credo)
+* Elm compilation tests and linting via [elm-make](https://github.com/elm-lang/elm-make)
+* Configured for CI testing and linting on [Circle CI](http://circleci.com)
+* [Dockerized](https://www.docker.com/) for easy development and deployment
 
 ## Starting things up
 
