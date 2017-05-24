@@ -1,7 +1,7 @@
 {
-    "version": "1.0.0",
-    "summary": "helpful summary of your project, less than 80 characters",
-    "repository": "https://github.com/user/project.git",
+    "version": "0.4.0",
+    "summary": "A starter project using Elm+Elixir+Twitter OAuth",
+    "repository": "https://github.com/arsduo/elm-elixir-starter.git",
     "license": "BSD3",
     "source-directories": [
         "."

@@ -13,10 +13,10 @@ fully working, ready-to-go starter project would save a ton of time.
 * [Elm 0.18](http://elm-lang.org/) for the frontend
 * Auth through Twitter (extendible to other OAuth providers through [Guardian](https://github.com/ueberauth/guardian)]/[Ueberauth](https://github.com/ueberauth/ueberauth))
 * [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
-* Dockerized for easy development and deployment
-* [Credo](https://github.com/rrrene/credo) for Elixir linting
-* Thorough Elixir tests
-* Configured for Circle CI for easy testing and linting
+* Elixir tests and linting via [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) and [Credo](https://github.com/rrrene/credo)
+* Elm compilation tests and linting via [elm-make](https://github.com/elm-lang/elm-make)
+* Configured for CI testing and linting on [Circle CI](http://circleci.com)
+* [Dockerized](https://www.docker.com/) for easy development and deployment
 
 ## Starting things up
 
@@ -26,11 +26,17 @@ Once you've customized the code (see the next section), run:
 * `yarn install` to get Javascript dependencies
 * `docker-compose build`
 * `docker-compose run web mix ecto.create`
+
+Commands you'll find useful on an ongoing basis:
+
 * `docker-compose run web mix ecto.migrate`
 * `docker-compose up`
 
-Once it's up and running, `docker-compose run web mix ecto.migrate` and `docker-compose up` should
-be all you need on an ongoing basis.
+And a few for code quality:
+
+* Elixir tests: `mix test`
+* Elixir linting: `mix credo`
+* Elm linting: `yarn lint`
 
 When the server is running, check out [`localhost:4000`](http://localhost:4000) -- it comes with a
 login link that'll auth you with Twitter!
@@ -47,8 +53,11 @@ To set up a new project, you'll want to set up a few things:
 * `mv lib/elmelixirstarter.ex lib/${YOUR_PROJECT_NAME}.ex`
 * Change the project name in web/templates/layout/app.html.eex
 * Change the database name in `docker-compose.yml`
+* Update the project details in `elm/elm-package.json`
+* Update `scripts/lint-elm.sh`, changing `arsduo` to the username you put in `elm-package.json`
 
 ### Set up credentials
+
 * Set Twitter credentials appropriately in config/twitter.exs
 * Set a Phoenix secret key in `config/config.exs`
 * Set a Guardian secret key (for auth) in `config/config.exs`
@@ -59,7 +68,10 @@ There are a few things that would make this more useful:
 
 * There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
 * Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
+* Circle CI doesn't yet run Elm linting
 * Circle CI runs on a different, easier-to-set-up base image than Docker
+* `scripts/lint-elm.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
+  elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
 * It doesn't start up with any cute images or instructions.
 
 Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
