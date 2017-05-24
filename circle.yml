@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/arsduo/commonplace-feeds
     docker:
-      - image: trenpixster/elixir:1.4.1
+      - image: arsduo/elm-elixir-starter
         environment:
           PG_USER: ubuntu
           PD_DB: circle_test
