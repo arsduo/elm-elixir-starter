@@ -57,6 +57,10 @@ exports.config = {
       ignore: [/web\/static\/vendor/]
     },
 
+    sass: {
+      mode: "native"
+    },
+
     elmBrunch: {
       elmFolder: "elm",
       mainModules: ["Main.elm"],

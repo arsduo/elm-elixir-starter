@@ -19,20 +19,24 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
+
+# /priv/static/
+#
 # Ignore secret config
 config/secret_config.exs
 secrets.sh
 
-
+# Don't check in node modules
 /node_modules
 
 .DS_Store
 
+# Don't check in compiled Elm code
 /elm/elm-stuff
 
-/priv/static/js/app.js
+# Ignore generated static files
+/priv/static
 app.js.map
 /elm/web
 
 postgres/
-/elm-stuff

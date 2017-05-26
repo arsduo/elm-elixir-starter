@@ -13,6 +13,7 @@ fully working, ready-to-go starter project would save a ton of time.
 * [Elm 0.18](http://elm-lang.org/) for the frontend
 * Auth through Twitter (extendible to other OAuth providers through [Guardian](https://github.com/ueberauth/guardian)]/[Ueberauth](https://github.com/ueberauth/ueberauth))
 * [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
+* SASS/SCSS support
 * Elixir tests and linting via [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) and [Credo](https://github.com/rrrene/credo)
 * Elm compilation tests and linting via [elm-make](https://github.com/elm-lang/elm-make)
 * Configured for CI testing and linting on [Circle CI](http://circleci.com)
@@ -58,7 +59,8 @@ To set up a new project, you'll want to set up a few things:
 
 ### Set up credentials
 
-* Set Twitter credentials appropriately in config/twitter.exs
+* Set up a [Twitter app](https://apps.twitter.com/) and update the config
+  appropriately in config/twitter.exs
 * Set a Phoenix secret key in `config/config.exs`
 * Set a Guardian secret key (for auth) in `config/config.exs`
 
