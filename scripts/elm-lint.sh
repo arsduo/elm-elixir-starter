@@ -1,4 +1,12 @@
 # A simple script to compile your Elm project and check it for warnings.
+#
+# This won't be necessary when elm-make has a flag to fail on warnings (see
+# https://github.com/elm-lang/elm-make/issues/108) but for now unfortunately we have to parse the
+# output.
+#
+# I'm sure someone with bash expertise could make this cleaner, but it works.
+
+
 cd elm
 # Remove any previously-compiled Elm artifacts to ensure we compile and lint everything
 rm -rf elm-stuff/build-artifacts/0.18.0/arsduo
