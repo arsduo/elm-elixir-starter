@@ -56,13 +56,7 @@ To set up a new project, you'll want to set up a few things:
 * Change the database name in `docker-compose.yml`
 * Update the project details in `elm/elm-package.json`
 * Update `scripts/elm-lint.sh`, changing `arsduo` to the username you put in `elm-package.json`
-
-### Set up credentials
-
-* Set up a [Twitter app](https://apps.twitter.com/) and update the config
-  appropriately in config/twitter.exs
-* Set a Phoenix secret key in `config/config.exs`
-* Set a Guardian secret key (for auth) in `config/config.exs`
+* `cp development.env.example development.env` and configure your [Twitter app](https://apps.twitter.com/) and other settings appropriately
 
 ## Known issues / to do
 
