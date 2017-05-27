@@ -3,22 +3,34 @@ module Views.Home exposing (html)
 import Model exposing (Model)
 import Messages exposing (..)
 import Auth.User exposing (UserStatus(..), User)
-import Html exposing (Html, div, text, span, img, a)
+import Html exposing (Html, div, text, h3, img, a)
 import Html.Attributes exposing (class, src, href, attribute)
-
-
--- TODO this may not be the right place to generate this, since it's ultimately sent out over a port.
 
 
 html : Model -> Html Msg
 html model =
-    case model.user of
-        UserSignedOut ->
-            div []
-                [ a [ href "/auth/twitter" ] [ text "Sign in" ]
-                ]
+    let
+        homeMarkup : List (Html Msg)
+        homeMarkup =
+            case model.user of
+                UserSignedOut ->
+                    [ div [ class "auth" ]
+                        [ div [] [ a [ href "/auth/twitter", class "btn btn-success" ] [ text "Sign in" ] ]
+                        , img [ src "/images/welcome-unauthed.jpg", class "welcome unauthed" ] []
+                        ]
+                    ]
 
-        UserSignedIn user ->
-            div []
-                [ div [] [ text ("Hi " ++ user.name) ]
-                ]
+                UserSignedIn user ->
+                    [ div []
+                        [ h3 []
+                            [ text ("Hi " ++ user.name)
+                            ]
+                        , div []
+                            [ text "\"Hmm, what should I do with all this?\""
+                            ]
+                        ]
+                    , img [ src "/images/welcome-authed.jpg", class "welcome authed" ] []
+                    ]
+    in
+        div [ class "splash-screen" ]
+            homeMarkup
