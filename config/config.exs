@@ -12,7 +12,7 @@ config :elmelixirstarter,
 # Configures the endpoint
 config :elmelixirstarter, Elmelixirstarter.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "NOT A SECRET KEY REALLYNOT A SECRET KEY REALLYNOT A SECRET KEY REALLY",
+  secret_key_base: System.get_env("PHOENIX_SECRET_KEY_BASE"),
   render_errors: [view: Elmelixirstarter.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Elmelixirstarter.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -50,7 +50,7 @@ config :guardian, Guardian,
   allowed_drift: 2000,
   verify_issuer: true, # optional
   # replace this before production, obviously 💻
-  secret_key: "ANOTHER SECRET KEY YOU NEEDANOTHER SECRET KEY YOU NEEDANOTHER SECRET KEY YOU NEED",
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY"),
   serializer: Elmelixirstarter.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
