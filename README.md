@@ -58,20 +58,16 @@ To set up a new project, you'll want to set up a few things:
 * Update `scripts/elm-lint.sh`, changing `arsduo` to the username you put in `elm-package.json`
 * `cp development.env.example development.env` and configure your [Twitter app](https://apps.twitter.com/) and other settings appropriately
 
-## Known issues / to do
+## Contributing
 
-There are a few things that would make this more useful:
+Feedback is highly welcome! If you run into any problems, please [file an
+issue](https://github.com/arsduo/elm-elixir-starter/issues/new) or, if you'd like, open a pull
+request. I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to accomplish some of
+what I've done -- if you see some, let me know!
 
-* There are a bunch of steps to customize the repo; the string replacement and file moving could probably be scripted.
-* Elixir compiles each time you execute a `docker-compose run` command,/elm even though the Dockerfile includes `mix compile`.
-* `scripts/elm-lint.sh` feels a bit janky (I'm no bash expert), but is necessary given [this
-  elm-make issue](https://github.com/elm-lang/elm-make/issues/108)
-* Circle CI compiles all the Elixir files for both testing and linting
-* It doesn't start up with any cute images or instructions.
-
-Overall, I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to
-accomplish some of what I've done -- if you see some, let me know! Feedback, issues, and pull
-requests are very welcome.
+Please note that this project is released with a Contributor Code of Conduct. By participating in
+this project you agree to abide by its terms. See
+[code_of_conduct.md](https://github.com/arsduo/elm-elixir-starter/blob/master/CODE_OF_CONDUCT.md) for more information.
 
 ## Thanks
 
