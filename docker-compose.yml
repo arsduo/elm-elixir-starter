@@ -21,7 +21,7 @@ services:
 
   db:
     image: postgres
-    environment:
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+     - development.env
     volumes:
       - ./postgres:/var/lib/postgresql
