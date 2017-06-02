@@ -24,6 +24,8 @@ fully working, ready-to-go starter project would save a ton of time.
 To set up a new project, just run `./setup_project.sh`. It'll ask you a few questions and make most
 of the changes for you. Easy as pie!
 
+<img width="600" alt="setup process screenshot" src="https://cloud.githubusercontent.com/assets/48325/26746960/62e7ec30-47b8-11e7-9348-2af3b1cbb464.png">
+
 ## Starting things up
 
 Once you've customized the code, run:
