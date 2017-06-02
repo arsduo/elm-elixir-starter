@@ -59,22 +59,41 @@ printf "\n"
 directoriesToRenameIn=(config lib priv "test" web)
 filesToRenameIn=(mix.exs)
 
+# OS X has a different format for sed; you have to explicitly say there's an empty string as
+# suffix to use to create backup files when editing in place; for Unix it's enough not to provide
+# any value.
+# see https://stackoverflow.com/questions/25486667/sed-without-backup-file
+function replaceWithSed {
+  if [[ $OSTYPE =~ darwin ]]
+  then
+    sed -i '' $1 $2
+  else
+    sed -i $1 $2
+  fi
+}
+
 printf "Replacing text in files..."
 
 for replacementString in "s/elmelixirstarter/${appSnakeCaseName}/g"  "s/Elmelixirstarter/${appCamelCaseName}/g"
 do
   for dir in "${directoriesToRenameIn[@]}"
   do
-    find "${dir}" -type f \( -name \*.ex -o -name \*.exs -o -name \*.yml \) -print0 | xargs -0 sed -i '' "${replacementString}"
+    # See note above about sed
+    if [[ $OSTYPE =~ darwin ]]
+    then
+      find "${dir}" -type f \( -name \*.ex -o -name \*.exs -o -name \*.yml \) -print0 | xargs -0 sed -i '' "${replacementString}"
+    else
+      find "${dir}" -type f \( -name \*.ex -o -name \*.exs -o -name \*.yml \) -print0 | xargs -0 sed -i "${replacementString}"
+    fi
   done
 
   for file in "${filesToRenameIn[@]}"
   do
-    sed -i '' "${replacementString}" "${file}"
+    replaceWithSed "${replacementString}" "${file}"
   done
 done
 
-sed -i '' "s/Elm Elixir Starter/${appCamelCaseName}/g" web/templates/layout/app.html.eex
+replaceWithSed "s/Elm\ Elixir\ Starter/${appCamelCaseName}/g" web/templates/layout/app.html.eex
 
 printf "done!\n\n"
 
@@ -98,8 +117,8 @@ then
   then
     githubUsername="${BASH_REMATCH[1]}"
     # use another separator than / to avoid having to escape the repoURL
-    sed -i '' "s%https://github.com/arsduo/elm-elixir-starter.git%${repoURL}%g" elm/elm-package.json
-    sed -i '' "s/arsduo/${githubUsername}/g" scripts/elm-lint.sh
+    replaceWithSed "s%https://github.com/arsduo/elm-elixir-starter.git%${repoURL}%g" elm/elm-package.json
+    replaceWithSed "s/arsduo/${githubUsername}/g" scripts/elm-lint.sh
   else
     echo "${RED}Unable to determine Github username from that URL!"
     echo "You can revert all git changes using 'git checkout -f' and try again.${NO_COLOR}"
