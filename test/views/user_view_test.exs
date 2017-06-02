@@ -17,4 +17,3 @@ defmodule Elmelixirstarter.UserViewTest do
     }
   end
 end
-
