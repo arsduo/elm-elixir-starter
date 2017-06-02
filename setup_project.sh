@@ -13,10 +13,14 @@ echo
 git status | grep "nothing to commit, working tree clean" > /dev/null
 if [[ $? -ne 0 ]]
 then
-  echo "${RED}This script requires a clean working directory; you have changes (check out git status)."
-  echo "Stash or commit those changes and try again.${NO_COLOR}"
-  echo
-  exit 1
+  git status | grep "nothing to commit, working directory clean" > /dev/null
+  if [[ $? -ne 0 ]]
+  then
+    echo "${RED}This script requires a clean working directory; you have changes (check out git status)."
+    echo "Stash or commit those changes and try again.${NO_COLOR}"
+    echo
+    exit 1
+  fi
 fi
 
 which mix > /dev/null
