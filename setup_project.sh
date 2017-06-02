@@ -1,4 +1,4 @@
-# 1) Start up and ensure the working directory is clean.
+# 1) Start up and ensure the working directory is clean and necessary tools are installed.
 
 RED='\033[0;31m'
 BOLD='\033[1m'
@@ -15,6 +15,24 @@ if [[ $? -ne 0 ]]
 then
   echo "${RED}This script requires a clean working directory; you have changes (check out git status)."
   echo "Stash or commit those changes and try again.${NO_COLOR}"
+  echo
+  exit 1
+fi
+
+which mix > /dev/null
+if [[ $? -ne 0 ]]
+then
+  echo "${RED}This script requires a Elixir to be installed and the mix command to be available; mix could not be found."
+  echo "Check out https://elixir-lang.org/install.html for instructions.${NO_COLOR}"
+  echo
+  exit 1
+fi
+
+which yarn > /dev/null
+if [[ $? -ne 0 ]]
+then
+  echo "${RED}This script requires yarn to be installed for Javascript dependencies; it couldn't be found."
+  echo "Check out https://yarnpkg.com/en/docs/getting-started for instructions. ${NO_COLOR}"
   echo
   exit 1
 fi
@@ -90,20 +108,28 @@ fi
 
 cp development.env.example development.env
 
-# 4) Stage it all on Git
+# 5) Stage it all on Git
 
 git add .
 
-# 5) Tell the user what we've done
+# 6) Get dependencies
+
+echo "Getting dependencies..."
+
+mix deps.get # Elixir
+yarn install # Javascript
+
+# 7) Tell the user what we've done
 
 echo "Done with the automated setup!"
 echo
 echo "To see all the files that have been changed, run: git status"
 echo
-echo "A few final notes:"
+echo "Next steps:"
 echo "* ${BOLD}Make sure to set up your database and Twitter app in development.env!${NO_COLOR}"
-echo "* If you want to receive future updates, run: git remote add upstream git@github.com:arsduo/elm-elixir-starter.git"
-echo "* elm/elm-package.json has some additional fields you can customize if you want"
+$echo "* ${BOLD}After that, you can boot up your Docker environment and create the database, as described in the readme"
+echo
+echo "If you want to receive future updates, run: git remote add upstream git@github.com:arsduo/elm-elixir-starter.git"
 echo
 
 
