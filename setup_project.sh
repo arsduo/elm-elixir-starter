@@ -5,7 +5,7 @@ BOLD='\033[1m'
 NO_COLOR='\033[0m'
 
 echo
-echo "🌲  ⚗  ELM+ELIXIR STARTER CONFIGURATION ⚗  🌲 "
+echo "🌲  ⚗  ${BOLD}ELM+ELIXIR STARTER CONFIGURATION${NO_COLOR} ⚗  🌲 "
 echo
 echo "Welcome! Let's get your project customized so that you can get started with Elm and Elixir 😎"
 echo
@@ -86,8 +86,6 @@ then
   fi
 fi
 
-echo
-
 # 4) Copy development.env.example
 
 cp development.env.example development.env
@@ -98,7 +96,7 @@ git add .
 
 # 5) Tell the user what we've done
 
-echo "Done with the automated renames!"
+echo "Done with the automated setup!"
 echo
 echo "To see all the files that have been changed, run: git status"
 echo
