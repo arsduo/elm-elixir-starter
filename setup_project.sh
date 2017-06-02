@@ -93,7 +93,7 @@ do
   done
 done
 
-replaceWithSed "s/Elm\ Elixir\ Starter/${appCamelCaseName}/g" web/templates/layout/app.html.eex
+replaceWithSed "s/Elm+Elixir+Starter/${appCamelCaseName}/g" web/templates/layout/app.html.eex
 
 printf "done!\n\n"
 
