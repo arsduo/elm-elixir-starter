@@ -2,8 +2,6 @@ defmodule Elmelixirstarter.GuardianSerializerTest do
   use Elmelixirstarter.ModelCase
   import Elmelixirstarter.Factory
 
-  alias Elmelixirstarter.Repo
-  alias Elmelixirstarter.User
   alias Elmelixirstarter.GuardianSerializer
 
   describe "#for_token" do

@@ -66,7 +66,7 @@ defmodule Elmelixirstarter.AuthControllerTest do
       conn = build_conn()
       conn = assign(conn, :ueberauth_auth, context[:ueberauth_params])
 
-      conn = post conn, "/auth/twitter/callback"
+      post conn, "/auth/twitter/callback"
 
       user = (from u in User, where: u.twitter_user_id == ^context[:twitter_uid]) |> Repo.one!
       assert user.name == context[:name]
@@ -97,7 +97,7 @@ defmodule Elmelixirstarter.AuthControllerTest do
       conn = build_conn()
       conn = assign(conn, :ueberauth_auth, context[:ueberauth_params])
 
-      conn = post conn, "/auth/twitter/callback"
+      post conn, "/auth/twitter/callback"
 
       user = (from u in User, where: u.twitter_user_id == ^context[:twitter_uid]) |> Repo.one!
       assert user.name == context[:name]
