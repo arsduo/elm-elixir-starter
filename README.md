@@ -28,10 +28,8 @@ of the changes for you. Easy as pie!
 
 ## Starting things up
 
-Once you've customized the code, run:
+Once you've customized the code, complete the setup with:
 
-* `mix deps.get` to get the Phoenix dependencies
-* `yarn install` to get Javascript dependencies
 * `docker-compose build`
 * `docker-compose run web mix ecto.create`
 
