@@ -127,7 +127,7 @@ echo "To see all the files that have been changed, run: git status"
 echo
 echo "Next steps:"
 echo "* ${BOLD}Make sure to set up your database and Twitter app in development.env!${NO_COLOR}"
-echo "* ${BOLD}After that, you can boot up your Docker environment and create the database, as described in the readme"
+echo "* ${BOLD}After that, you can boot up your Docker environment and create the database, as described in the readme${NO_COLOR}"
 echo
 echo "If you want to receive future updates, run: git remote add upstream git@github.com:arsduo/elm-elixir-starter.git"
 echo
