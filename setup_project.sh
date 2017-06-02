@@ -1,6 +1,7 @@
 # 1) Start up and ensure the working directory is clean.
 
 RED='\033[0;31m'
+BOLD='\033[1m'
 NO_COLOR='\033[0m'
 
 echo
@@ -87,7 +88,13 @@ fi
 
 echo "\n"
 
+# 4) Copy development.env.example
+
+cp development.env.example development.env
+
 # 4) Stage it all on Git
+
+git add .
 
 # 5) Tell the user what we've done
 
@@ -96,9 +103,9 @@ echo
 echo "To see all the files that have been changed, run: git status"
 echo
 echo "A few final notes:"
+echo "* ${BOLD}Make sure to set up your database and Twitter app in development.env!${NO_COLOR}"
 echo "* If you want to receive future updates, run: git remote add upstream git@github.com:arsduo/elm-elixir-starter.git"
 echo "* elm/elm-package.json has some additional fields you can customize if you want"
 echo
 
-git add .
 

@@ -19,9 +19,14 @@ fully working, ready-to-go starter project would save a ton of time.
 * Configured for CI testing and linting on [Circle CI](http://circleci.com)
 * [Dockerized](https://www.docker.com/) for easy development and deployment
 
+## Customizing this Repo
+
+To set up a new project, just run `./setup_project.sh`. It'll ask you a few questions and make most
+of the changes for you. Easy as pie!
+
 ## Starting things up
 
-Once you've customized the code (see the next section), run:
+Once you've customized the code, run:
 
 * `mix deps.get` to get the Phoenix dependencies
 * `yarn install` to get Javascript dependencies
@@ -48,22 +53,6 @@ From the home page, you can auth with Twitter and will have access to the user i
 <img width="600" alt="unauthed" src="https://cloud.githubusercontent.com/assets/48325/26558109/ea25f0a2-446b-11e7-820f-f5c165f4ac1c.png">
 <img width="600" alt="twitter-auth" src="https://cloud.githubusercontent.com/assets/48325/26558108/ea239564-446b-11e7-8443-47218c4df29e.png">
 <img width="600" alt="authed" src="https://cloud.githubusercontent.com/assets/48325/26558110/ea260f42-446b-11e7-85bb-ad2a7513b1a3.png">
-
-## Customizing this Repo
-
-To set up a new project, you'll want to set up a few things:
-
-### Choose a project name
-
-* Replace `elmelixirstarter` with `yourprojectname` (case sensitive)
-* Replace `Elmelixirstarter` with `Yourprojectname` (case sensitive)
-* `mv lib/elmelixirstarter lib/${YOUR_PROJECT_NAME}`
-* `mv lib/elmelixirstarter.ex lib/${YOUR_PROJECT_NAME}.ex`
-* Change the project name in web/templates/layout/app.html.eex
-* Change the database name in `docker-compose.yml`
-* Update the project details in `elm/elm-package.json`
-* Update `scripts/elm-lint.sh`, changing `arsduo` to the username you put in `elm-package.json`
-* `cp development.env.example development.env` and configure your [Twitter app](https://apps.twitter.com/) and other settings appropriately
 
 ## Contributing
 
