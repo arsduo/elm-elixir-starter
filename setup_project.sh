@@ -86,7 +86,7 @@ then
   fi
 fi
 
-echo "\n"
+echo
 
 # 4) Copy development.env.example
 
