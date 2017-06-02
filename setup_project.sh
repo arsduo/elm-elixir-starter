@@ -10,7 +10,7 @@ echo
 echo "Welcome! Let's get your project customized so that you can get started with Elm and Elixir 😎"
 echo
 
-git status | grep "nothing to commit, working tree clean"
+git status | grep "nothing to commit, working tree clean" > /dev/null
 if [[ $? -ne 0 ]]
 then
   echo "${RED}This script requires a clean working directory; you have changes (check out git status)."
