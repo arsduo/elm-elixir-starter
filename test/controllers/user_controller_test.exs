@@ -1,14 +1,12 @@
 defmodule Elmelixirstarter.UserControllerTest do
   use Elmelixirstarter.ConnCase
 
-  alias Elmelixirstarter.User
-
   test "#me requires a login", %{conn: conn} do
     conn = get conn, user_path(conn, :me)
     assert json_response(conn, 401) == Elmelixirstarter.AuthErrorHandler.unauthenticated_response
   end
 
-  test "#me renders the user", %{conn: conn} do
+  test "#me renders the user" do
     user = insert(:user)
     conn = guardian_login(user)
 

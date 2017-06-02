@@ -45,7 +45,7 @@ defmodule Elmelixirstarter.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:dialyxir, "~> 0.4", only: [:dev], runtime: false},
-     {:credo, "~> 0.8.0-rc6", only: [:dev, :test], runtime: false},
+     {:credo, "~> 0.8.0-rc7", only: [:dev, :test], runtime: false},
      {:ex_machina, "~> 1.0", only: [:dev, :test]}]
   end
 

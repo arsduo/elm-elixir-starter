@@ -2,7 +2,6 @@ defmodule Elmelixirstarter.UserViewTest do
   use Elmelixirstarter.ModelCase
 
   alias Elmelixirstarter.UserView
-  alias Elmelixirstarter.User
 
   import Elmelixirstarter.Factory
 
