@@ -127,9 +127,15 @@ then
   fi
 fi
 
-# 4) Copy development.env.example
+# 4) Set up a local development.env with randomized secure values
 
 cp development.env.example development.env
+
+phoenixSecretKeyBase=`elixir -e "IO.puts(:crypto.strong_rand_bytes(64) |> Base.url_encode64 |> binary_part(0, 64))"`
+guardianSecretKey=`elixir -e "IO.puts(:crypto.strong_rand_bytes(64) |> Base.url_encode64 |> binary_part(0, 64))"`
+
+replaceWithSed "s/PHOENIX_SECRET_KEY_BASE=/PHOENIX_SECRET_KEY_BASE=${phoenixSecretKeyBase}/" development.env
+replaceWithSed "s/GUARDIAN_SECRET_KEY=/GUARDIAN_SECRET_KEY=${guardianSecretKey}/" development.env
 
 # 5) Stage it all on Git
 
@@ -151,6 +157,7 @@ echo
 echo "Next steps:"
 echo "* ${BOLD}Make sure to set up your database and Twitter app in development.env!${NO_COLOR}"
 echo "* ${BOLD}After that, you can boot up your Docker environment and create the database, as described in the readme${NO_COLOR}"
+echo "* We've set up secret keys for your app using Erlang's :crypto.strong_rand_bytes -- you can change these in development.env"
 echo
 echo "If you want to receive future updates, run: git remote add upstream git@github.com:arsduo/elm-elixir-starter.git"
 echo
