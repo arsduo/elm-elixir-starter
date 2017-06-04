@@ -20,5 +20,5 @@ jobs:
     - checkout
     - run: mix deps.get
     - run: mix test
-    - run: mix credo
+    - run: MIX_ENV=test mix credo
     - run: yarn lint
