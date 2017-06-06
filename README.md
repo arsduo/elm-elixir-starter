@@ -4,9 +4,7 @@
 
 Sometimes the most painful part of learning a new language isn't picking the new syntax or libraries or logic — it's figuring out all the supporting technologies. Wouldn't it be nice to jump straight to coding instead and pick up the infrastructure along the way?
 
-For anyone who's felt that way and who's excited to try out Elm and Elixir (two of my favorite programming languages), look no further: there's now a way to leap those hurdles.
-
-Introducing the Elm+Elixir Starter Kit, a new **boilerplate project** combining **Elm** and **Elixir**, ready with an **easy, scripted setup** for developers who are excited to experiment and build on these technologies.
+Introducing the Elm+Elixir Starter Kit, a new **boilerplate project** combining **Elm** and **Elixir**, ready with an **easy, scripted setup** for developers who are excited to experiment and build with these languages.
 
 ## Features
 
