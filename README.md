@@ -73,7 +73,8 @@ this project you agree to abide by its terms. See
 Thanks to [Richard Whaling](https://github.com/rwhaling) for his invaluable help setting up Docker
 and for his pairing on an earlier Elm+Elixir project, to [Gursimran
 Singh](https://github.com/gnarmis) for his work at [eSpark Learning](http://esparklearning.com) on
-Elixir and Docker, and, of course, the amazing people who've built all the technologies used in
+Elixir and Docker, to [Corey Haines](https://github.com/coreyhaines) for an excellent introduction
+to Elm, and, of course, the amazing people who've built all the technologies used in
 this repo.
 
 Both welcome images were taken by me (Alex Koppel). One is of Dax, one of my cats, and the other an old door in Des Moines, IA, USA. You can probably use them if you want.
