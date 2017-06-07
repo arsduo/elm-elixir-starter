@@ -53,17 +53,8 @@ When the server is running, you'll see that Docker has built and compiled both t
 
 <img width="600" alt="docker-compose" src="https://cloud.githubusercontent.com/assets/48325/26558107/ea230e28-446b-11e7-8210-a5258cb4f448.png">
 
-You'll see this handsome welcome screen:
-
-<img width="600" alt="unauthed" src="https://cloud.githubusercontent.com/assets/48325/26558109/ea25f0a2-446b-11e7-820f-f5c165f4ac1c.png">
-
-and can log in with Twitter:
-
-<img width="600" alt="twitter-auth" src="https://cloud.githubusercontent.com/assets/48325/26558108/ea239564-446b-11e7-8443-47218c4df29e.png">
-
-after which you'll be back at the app with access to your Twitter user:
-
-<img width="600" alt="authed" src="https://cloud.githubusercontent.com/assets/48325/26558110/ea260f42-446b-11e7-85bb-ad2a7513b1a3.png">
+For a guide to some of the interesting implementation details, check out the
+[wiki](https://github.com/arsduo/elm-elixir-starter/wiki/How-It-Works).
 
 ## Contributing
 
