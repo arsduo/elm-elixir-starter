@@ -76,7 +76,7 @@ Singh](https://github.com/gnarmis) for his work at [eSpark Learning](http://espa
 Elixir and Docker, and, of course, the amazing people who've built all the technologies used in
 this repo.
 
-Both welcome images were taken by me (Alex Koppel). One is of Dax, one of my cats, and the other an old door in Des Moines, IA, USA. You can probably use them if you want.
+Both welcome images were taken by me (Alex Koppel). One is of Dax, one of my cats, and the other an old door in Des Moines, IA, USA.
 
 ## References
 
