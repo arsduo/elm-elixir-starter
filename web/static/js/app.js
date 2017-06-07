@@ -25,7 +25,3 @@ import "phoenix_html"
 // guidance
 const elmDiv = document.querySelector('#elm-container');
 const elmApp = Elm.Main.embed(elmDiv);
-
-elmApp.ports.openTwitterDialog.subscribe((url) => {
-  window.open(url)
-})
