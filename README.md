@@ -1,27 +1,32 @@
 [![CircleCI](https://circleci.com/gh/arsduo/elm-elixir-starter.svg?style=svg)](https://circleci.com/gh/arsduo/elm-elixir-starter)
 
-# Elm+Elixir+OAuth Starter
+# Elm+Elixir Starter Kit
 
-Elm and Elixir have quickly become two of my favorite progamming languages, and together they've
-made building new projects both at home and at work a lot of fun. There are good resources out
-there on how to put those projects together, but as I've built more I've realized that a
-fully working, ready-to-go starter project would save a ton of time.
+Sometimes the most painful part of learning a new language isn't picking the new syntax or libraries or logic — it's figuring out all the supporting technologies. Wouldn't it be nice to jump straight to coding instead and pick up the infrastructure along the way?
+
+Introducing the Elm+Elixir Starter Kit, a new **boilerplate project** combining **Elm** and **Elixir**, ready with an **easy, scripted setup** for developers who are excited to experiment and build with these languages.
 
 ## Features
 
-* [Elixir 1.4.4](http://elixir-lang.org) for the backend, with [Phoenix 1.2.1](phoenixframework.org) configured for Postgres
-* [Elm 0.18](http://elm-lang.org/) for the frontend
-* Auth through Twitter (extendible to other OAuth providers through [Guardian](https://github.com/ueberauth/guardian)]/[Ueberauth](https://github.com/ueberauth/ueberauth))
-* [Yarn](https://yarnpkg.com/) for deterministic Javascript package management
-* SASS/SCSS support
-* Elixir tests and linting via [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) and [Credo](https://github.com/rrrene/credo)
-* Elm compilation tests and linting via [elm-make](https://github.com/elm-lang/elm-make)
-* Configured for CI testing and linting on [Circle CI](http://circleci.com)
-* [Dockerized](https://www.docker.com/) for easy development and deployment
+* <a href="http://elixir-lang.org" target="_blank">Elixir 1.4.4</a> for the backend, with <a href="phoenixframework.org" target="_blank">Phoenix 1.2.1</a> configured for Postgres
+* <a href="http://elm-lang.org/" target="_blank">Elm 0.18</a> for the frontend
+* Authentication through Twitter (extensible to other providers through <a href="https://github.com/ueberauth/guardian" target="_blank">Guardian</a>/<a href="https://github.com/ueberauth/ueberauth" target="_blank">Ueberauth</a>)
+* Independent frontend that communicates to the backend using JSON API calls
+* Elixir tests and code linting/static analysis via <a href="https://hexdocs.pm/ex_unit/ExUnit.html" target="_blank">ExUnit</a> and <a href="https://github.com/rrrene/credo" target="_blank">Credo</a>
+* Elm compilation tests and code listing via <a href="https://github.com/elm-lang/elm-make" target="_blank">elm-make</a>
+* Ready for continuous integration on <a href="http://circleci.com" target="_blank">Circle CI</a>
+* <a href="https://yarnpkg.com/" target="_blank">Yarn</a> for deterministic Javascript package management
+* Configured for <a href="https://www.docker.com/" target="_blank">Docker</a> for easy development and deployment
 
-## Customizing this Repo
+## Getting Started
 
-To set up a new project, just run `./setup_project.sh`. It'll ask you a few questions and make most
+You can either fork the repo or clone directly from the original:
+
+```bash
+git clone git@github.com:arsduo/elm-elixir-starter.git
+```
+
+After that, just run `./setup_project.sh`. It'll ask you a few questions and make most
 of the changes for you. Easy as pie!
 
 <img width="600" alt="setup process screenshot" src="https://cloud.githubusercontent.com/assets/48325/26746960/62e7ec30-47b8-11e7-9348-2af3b1cbb464.png">
@@ -48,18 +53,25 @@ When the server is running, you'll see that Docker has built and compiled both t
 
 <img width="600" alt="docker-compose" src="https://cloud.githubusercontent.com/assets/48325/26558107/ea230e28-446b-11e7-8210-a5258cb4f448.png">
 
-From the home page, you can auth with Twitter and will have access to the user info through the API:
+You'll see this handsome welcome screen:
 
 <img width="600" alt="unauthed" src="https://cloud.githubusercontent.com/assets/48325/26558109/ea25f0a2-446b-11e7-820f-f5c165f4ac1c.png">
+
+and can log in with Twitter:
+
 <img width="600" alt="twitter-auth" src="https://cloud.githubusercontent.com/assets/48325/26558108/ea239564-446b-11e7-8443-47218c4df29e.png">
+
+after which you'll be back at the app with access to your Twitter user:
+
 <img width="600" alt="authed" src="https://cloud.githubusercontent.com/assets/48325/26558110/ea260f42-446b-11e7-85bb-ad2a7513b1a3.png">
 
 ## Contributing
 
 Feedback is highly welcome! If you run into any problems, please [file an
 issue](https://github.com/arsduo/elm-elixir-starter/issues/new) or, if you'd like, open a pull
-request. I'm not an expert on Elm, Elixir, or Docker, so there may well be better ways to accomplish some of
-what I've done -- if you see some, let me know!
+request. As a relative newbie to Elm, Elixir, _and_ Docker, I'm sure there are plenty of good
+practices you know of that I've missed — thoughts, suggestions, and Github issues and especially
+pull requests are very welcome!
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See
@@ -70,8 +82,8 @@ this project you agree to abide by its terms. See
 Thanks to [Richard Whaling](https://github.com/rwhaling) for his invaluable help setting up Docker
 and for his pairing on an earlier Elm+Elixir project, to [Gursimran
 Singh](https://github.com/gnarmis) for his work at [eSpark Learning](http://esparklearning.com) on
-Elixir and Docker, and, of course, the amazing people who've built all the technologies in this
-repo.
+Elixir and Docker, and, of course, the amazing people who've built all the technologies used in
+this repo.
 
 Both welcome images were taken by me (Alex Koppel). One is of Dax, one of my cats, and the other an old door in Des Moines, IA, USA. You can probably use them if you want.
 
