@@ -8,7 +8,7 @@ Introducing the Elm+Elixir Starter Kit, a new **boilerplate project** combining 
 
 ## Features
 
-* <a href="http://elixir-lang.org" target="_blank">Elixir 1.4.4</a> for the backend, with <a href="phoenixframework.org" target="_blank">Phoenix 1.2.1</a> configured for Postgres
+* <a href="http://elixir-lang.org" target="_blank">Elixir 1.6.5</a> for the backend, with <a href="phoenixframework.org" target="_blank">Phoenix 1.2.1</a> configured for Postgres
 * <a href="http://elm-lang.org/" target="_blank">Elm 0.18</a> for the frontend
 * Authentication through Twitter (extensible to other providers through <a href="https://github.com/ueberauth/guardian" target="_blank">Guardian</a>/<a href="https://github.com/ueberauth/ueberauth" target="_blank">Ueberauth</a>)
 * Independent frontend that communicates to the backend using JSON API calls
