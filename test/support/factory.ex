@@ -9,7 +9,7 @@ defmodule Elmelixirstarter.Factory do
       provider_secret: "some secret",
       provider_token: "some pig",
       # there must be a better way to do this
-      twitter_user_id: String.to_integer(sequence("twitter_user_id", &"#{&1}")),
+      twitter_user_id: String.to_integer(sequence("twitter_user_id", &"#{&1}"))
     }
   end
 end

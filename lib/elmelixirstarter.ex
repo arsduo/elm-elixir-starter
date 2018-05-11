@@ -15,7 +15,7 @@ defmodule Elmelixirstarter do
       # Start the Ecto repository
       supervisor(Elmelixirstarter.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Elmelixirstarter.Endpoint, []),
+      supervisor(Elmelixirstarter.Endpoint, [])
       # Start your own worker by calling: Elmelixirstarter.Worker.start_link(arg1, arg2, arg3)
       # worker(Elmelixirstarter.Worker, [arg1, arg2, arg3]),
     ]

@@ -1,7 +1,7 @@
 defmodule Elmelixirstarter.AuthController do
   use Elmelixirstarter.Web, :controller
 
-  plug Ueberauth
+  plug(Ueberauth)
 
   alias Elmelixirstarter.User
 
@@ -29,19 +29,25 @@ defmodule Elmelixirstarter.AuthController do
 
   defp lookup_user(%{uid: twitter_uid}) do
     {uid, _} = Integer.parse(twitter_uid)
-    Repo.one(from u in User, where: u.twitter_user_id == ^uid)
+    Repo.one(from(u in User, where: u.twitter_user_id == ^uid))
   end
 
-  defp save_user_data(user, %{uid: twitter_uid, credentials: %{token: token, secret: secret}, info: %{name: name, nickname: screenname, image: image_url}}) do
-    changeset = User.changeset(user, %{
-                     twitter_user_id: twitter_uid,
-                     # in Ueberauth, for some reason token and secret come in as chars not strings like everything else >:O
-                     provider_token: to_string(token),
-                     provider_secret: to_string(secret),
-                     name: name,
-                     username: screenname,
-                     image_url: image_url
-                   })
+  defp save_user_data(user, %{
+         uid: twitter_uid,
+         credentials: %{token: token, secret: secret},
+         info: %{name: name, nickname: screenname, image: image_url}
+       }) do
+    changeset =
+      User.changeset(user, %{
+        twitter_user_id: twitter_uid,
+        # in Ueberauth, for some reason token and secret come in as chars not strings like everything else >:O
+        provider_token: to_string(token),
+        provider_secret: to_string(secret),
+        name: name,
+        username: screenname,
+        image_url: image_url
+      })
+
     {:ok, _changeset} = Repo.insert_or_update(changeset)
   end
 end

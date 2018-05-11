@@ -18,6 +18,7 @@ defmodule Elmelixirstarter.GuardianSerializerTest do
         provider_secret: "some secret",
         provider_token: "some pig"
       }
+
       expected_result = {:error, "Unknown resource type"}
       assert GuardianSerializer.for_token(almost_user) == expected_result
       assert GuardianSerializer.for_token(%{}) == expected_result
