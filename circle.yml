@@ -24,7 +24,7 @@ jobs:
         cd $HOME/dependencies/libsysconfcpus &&
         ./configure --prefix=$HOME/dependencies/sysconfcpus &&
         make && make install
-    - run :|
+    - run: |
       mv $HOME/espark-client/node_modules/.bin/elm-make $HOME/espark-client/node_modules/.bin/elm-make-old &&
         printf "#\041/bin/bash\n\necho \"Running elm-make with sysconfcpus -n 2\"\n\n$HOME/dependencies/sysconfcpus/bin/sysconfcpus -n 2 $HOME/espark-client/node_modules/.bin/elm-make-old \"\$@\"" > $HOME/espark-client/node_modules/.bin/elm-make &&
         chmod +x $HOME/espark-client/node_modules/.bin/elm-make
