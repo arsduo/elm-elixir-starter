@@ -6,13 +6,13 @@ WORKDIR /usr/src/app
 
 # Install HTTPS support for apt-get and other necessary utilities not included in the slim slim base image:
 # curl (for installing stuff), git (for mix deps.get), and make (for the Elixir OAuth package), inotify-tools (for live reloading in dev)
-RUN apt-get update && apt-get install -y apt-transport-https curl git make inotify-tools
+RUN apt-get update && apt-get install -y apt-transport-https curl git make inotify-tools gnupg g++
 
 # Install the Javascript dependencies
 # We have to explicitly set up the system to install Node 7; by default it's 0.10, oddly
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
       && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-      && curl -sL https://deb.nodesource.com/setup_7.x | bash \
+      && curl -sL https://deb.nodesource.com/setup_8.x | bash \
       && apt-get install -y nodejs yarn
 ADD package.json .
 ADD yarn.lock .
