@@ -1,4 +1,4 @@
-FROM elixir:1.4.4-slim
+FROM elixir:1.6.5-slim
 
 # Compile app
 RUN mkdir /usr/src/app
