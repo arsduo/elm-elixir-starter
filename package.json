@@ -4,7 +4,8 @@
   "scripts": {
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin",
-    "lint": "bash ./scripts/elm-lint.sh"
+    "lint": "bash ./scripts/elm-lint.sh",
+    "format-elixir": "mix format mix.exs \"lib/**/*.{ex,exs}\" \"test/**/*.{ex,exs}\" \"web/**/*.{ex,exs}\" --check-formatted"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",

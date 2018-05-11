@@ -21,4 +21,5 @@ jobs:
     - run: mix deps.get
     - run: mix test
     - run: MIX_ENV=test mix credo
+    - run: yarn format-elixir
     - run: yarn lint
