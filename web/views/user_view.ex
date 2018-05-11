@@ -14,4 +14,3 @@ defmodule Elmelixirstarter.UserView do
     }
   end
 end
-
