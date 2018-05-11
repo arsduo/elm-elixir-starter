@@ -17,18 +17,15 @@ jobs:
       - PHOENIX_SECRET_KEY_BASE: 26b18785843693e1a3e81d82f92223c37844a2ab0f042a87e87481e75bd55a7a
       - GUARDIAN_SECRET_KEY: f4dc9536a7bee266b05b1910fc85608288e044c649761b50e9d545445f10e1d6
     steps:
-    - run: |
       # use sysconfcpus with elm-make
       # This avoids crazy slowdowns with Elm on Circle: https://github.com/AdamT/webpacker/blob/c7f55aa2619a82b338e3b2ad2ce630467fffd45c/docs/troubleshooting.md#running-elm-on-continuous-integration-ci-services-such-as-circleci-codeship-travis-ci
-      git clone https://github.com/obmarg/libsysconfcpus.git $HOME/dependencies/libsysconfcpus &&
+    - run: git clone https://github.com/obmarg/libsysconfcpus.git $HOME/dependencies/libsysconfcpus &&
         cd $HOME/dependencies/libsysconfcpus &&
         ./configure --prefix=$HOME/dependencies/sysconfcpus &&
         make && make install
-    - run: |
-      mv $HOME/espark-client/node_modules/.bin/elm-make $HOME/espark-client/node_modules/.bin/elm-make-old &&
+    - run: mv $HOME/espark-client/node_modules/.bin/elm-make $HOME/espark-client/node_modules/.bin/elm-make-old &&
         printf "#\041/bin/bash\n\necho \"Running elm-make with sysconfcpus -n 2\"\n\n$HOME/dependencies/sysconfcpus/bin/sysconfcpus -n 2 $HOME/espark-client/node_modules/.bin/elm-make-old \"\$@\"" > $HOME/espark-client/node_modules/.bin/elm-make &&
         chmod +x $HOME/espark-client/node_modules/.bin/elm-make
-
     - checkout
     - run: mix deps.get
     - run: mix test
