@@ -9,6 +9,7 @@
     "lint-elixir": "mix format mix.exs \"lib/**/*.{ex,exs}\" \"test/**/*.{ex,exs}\" \"web/**/*.{ex,exs}\" --check-formatted"
   },
   "dependencies": {
+    "elm": "^0.18.0",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
     "sass-brunch": "^2.10.4"

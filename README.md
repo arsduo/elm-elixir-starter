@@ -56,6 +56,15 @@ When the server is running, you'll see that Docker has built and compiled both t
 For a guide to some of the interesting implementation details, check out the
 [wiki](https://github.com/arsduo/elm-elixir-starter/wiki/How-It-Works).
 
+## Deploying to Heroku
+
+You can deploy apps derived from the Elm+Elixir starter to Heroku easily! Follow the steps for
+creating a Heroku app. Use the buildpacks specified in `app.json`, and deploy away!
+
+Useful references:
+
+*
+
 ## Contributing
 
 Feedback is highly welcome! If you run into any problems, please [file an

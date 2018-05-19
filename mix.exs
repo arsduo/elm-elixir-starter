@@ -30,8 +30,7 @@ defmodule Elmelixirstarter.Mixfile do
         :gettext,
         :phoenix_ecto,
         :postgrex,
-        :ueberauth_twitter,
-        :ex_machina
+        :ueberauth_twitter
       ]
     ]
   end
