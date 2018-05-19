@@ -56,6 +56,20 @@ When the server is running, you'll see that Docker has built and compiled both t
 For a guide to some of the interesting implementation details, check out the
 [wiki](https://github.com/arsduo/elm-elixir-starter/wiki/How-It-Works).
 
+## Deploying to Heroku
+
+You can deploy apps derived from the Elm+Elixir starter to Heroku easily! Follow the steps for
+creating a Heroku app:
+
+* `heroku create`
+* Add the buildpacks in `app.json` under settings
+* `heroku addons:create heroku-postgresql:hobby-dev`
+* Add appropriate config (environment) variables for the values required by `config/config.exs`
+  (except the `PG_` values, that's covered by `DATABASE_URL`)
+* Push it up and watch it deploy!
+
+
+
 ## Contributing
 
 Feedback is highly welcome! If you run into any problems, please [file an

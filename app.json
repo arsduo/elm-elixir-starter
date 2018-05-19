@@ -1,0 +1,15 @@
+{
+  "name": "Elm+Elixir Starter",
+  "repository": "https://github.com/arsduo/elm-elixir-starter",
+  "env": {
+    "ELM_COMPILE": "brunch build --production"
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+    },
+    {
+      "url": "https://github.com/gjaldon/heroku-buildpack-phoenix-static.git"
+    }
+  ]
+}

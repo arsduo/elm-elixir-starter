@@ -20,6 +20,9 @@ config :elmelixirstarter, Elmelixirstarter.Endpoint,
 # Configure your database
 config :elmelixirstarter, Elmelixirstarter.Repo,
   adapter: Ecto.Adapters.Postgres,
+  # For Heroku
+  url: System.get_env("DATABASE_URL"),
+  # For other environments
   username: System.get_env("PG_USER"),
   password: System.get_env("PG_PASS"),
   database: System.get_env("PG_DB"),
