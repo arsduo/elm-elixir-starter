@@ -22,7 +22,7 @@ RUN yarn install
 
 ADD ./elm/elm-package.json ./elm/elm-package.json
 WORKDIR /usr/src/app/elm
-RUN yarn global add elm \
+RUN yarn global add elm@0.18 \
       && elm-package install -y
 WORKDIR /usr/src/app
 
